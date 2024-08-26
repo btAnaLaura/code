@@ -1,0 +1,33 @@
+<section class="container">
+    <div class="container__header">
+      <h2>Add new User</h2>
+    </div>
+    <div class="container__form">
+      <mat-form-field>
+        <input [(ngModel)]="name" matInput placeholder="Name" />
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="email" matInput placeholder="Email" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-form-field>
+          <input [(ngModel)]="gender" matInput placeholder="Gender - F or M" />
+        </mat-form-field>
+      </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="container__actions">
+      <button mat-dialog-close mat-raised-button color="warn">Cancel</button>
+      <button
+        mat-dialog-close
+        mat-raised-button
+        cdkFocusInitial
+        color="accent"
+        (click)="confirmSaveUserHandler()"
+      >
+        Create
+      </button>
+    </div>
+  </section>

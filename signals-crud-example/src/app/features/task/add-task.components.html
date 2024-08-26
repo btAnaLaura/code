@@ -1,0 +1,36 @@
+<section class="container">
+    <div class="container__header">
+      <h2>Add new Task</h2>
+    </div>
+    <div class="container__form">
+      <mat-form-field>
+        <input [(ngModel)]="name" matInput placeholder="Name" />
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          [(ngModel)]="description"
+          matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="5"
+          cdkAutosizeMaxRows="20"
+          placeholder="Description"
+        ></textarea>
+      </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="container__actions">
+      <button mat-dialog-close mat-raised-button color="warn">Cancel</button>
+      <button
+        mat-dialog-close
+        mat-raised-button
+        cdkFocusInitial
+        color="accent"
+        (click)="confirmSaveTaskHandler()"
+      >
+        Create
+      </button>
+    </div>
+  </section>

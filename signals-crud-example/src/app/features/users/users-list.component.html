@@ -1,0 +1,32 @@
+<section class="container" *ngIf="users().length">
+  <div class="container__header">
+    <span>Users ({{totalUsersCount()}})</span>
+    <button mat-fab color="accent" (click)="addNewUser()">
+      <mat-icon>add_circle</mat-icon>
+    </button>
+  </div>
+  <table mat-table [dataSource]="users()" class="mat-elevation-z8">
+    <ng-container
+      [matColumnDef]="column"
+      *ngFor="let column of displayedColumns"
+    >
+      <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+      <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Tarefas</th>
+      <td mat-cell *matCellDef="let user">
+        <button
+          mat-icon-button
+          color="accent"
+          (click)="setSelectedUserId(user.id)"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+     
+    <tr mat-row *matRowDef="let row; columns: fullColumns"></tr>
+  </table>
+</section>
