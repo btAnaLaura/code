@@ -1,0 +1,34 @@
+.container {
+    padding: 1rem;
+    gap: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+      > span {
+        self-align: flex-start;
+        font-size: 2rem;
+        line-heith: 1rem;
+      }
+
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    &__actions {
+      gap: 2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
